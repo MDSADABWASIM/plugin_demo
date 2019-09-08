@@ -10,7 +10,10 @@ class MyApp extends StatefulWidget {
 
 //Using Two native android plugin FancyToast and Toasty in flutter.
 class _MyAppState extends State<MyApp> {
-  void showLongToast() {
+
+  
+  //Calling plugin function to show custom notification.
+  void showCustomToast() {
     PluginDemo.showToast(
       msg: "This is Custom Toast",
       toastLength: Toast.LENGTH_LONG,
@@ -57,11 +60,11 @@ class _MyAppState extends State<MyApp> {
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
-                  color: Colors.orange[100],
+                    color: Colors.orange[100],
                     elevation: 5,
                     shape: OutlineInputBorder(),
                     child: new Text('Show Custom Toast'),
-                    onPressed: showLongToast),
+                    onPressed: showCustomToast),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -93,7 +96,7 @@ class _MyAppState extends State<MyApp> {
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
-                    color: Colors.green[100],
+                  color: Colors.green[100],
                   elevation: 5,
                   shape: OutlineInputBorder(),
                   child: new Text('Show Success Toast'),
