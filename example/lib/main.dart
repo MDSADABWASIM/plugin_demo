@@ -8,12 +8,8 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => new _MyAppState();
 }
 
+//Using Two native android plugin FancyToast and Toasty in flutter.
 class _MyAppState extends State<MyApp> {
-  @override
-  initState() {
-    super.initState();
-  }
-
   void showLongToast() {
     PluginDemo.showToast(
       msg: "This is Custom Toast",
@@ -23,18 +19,15 @@ class _MyAppState extends State<MyApp> {
   }
 
   void showInfoToast() {
-PluginDemo.infoDialog();
+    PluginDemo.infoDialog();
   }
 
   void showWarningToast() {
-  PluginDemo.warningDialog();
+    PluginDemo.warningDialog();
   }
 
-
-
-
   void showErrorToast() {
-  PluginDemo.errorDialog();
+    PluginDemo.errorDialog();
   }
 
   void showAlert() {
@@ -43,41 +36,66 @@ PluginDemo.infoDialog();
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: new AppBar(
-          title: new Text('Fancy Toast'),
+          title: new Text('Native plugins in Flutter'),
+          centerTitle: true,
         ),
         body: new Center(
-          child: new Column(
+          child: new ListView(
+            padding: EdgeInsets.all(8),
             children: <Widget>[
+              SizedBox(height: 20),
+              Text(
+                'Using FancyToast and Toasty Native Android sdk plugins in Flutter',
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+              ),
+              SizedBox(height: 20),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
+                  color: Colors.orange[100],
+                    elevation: 5,
+                    shape: OutlineInputBorder(),
                     child: new Text('Show Custom Toast'),
                     onPressed: showLongToast),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
+                    color: Colors.red[100],
+                    elevation: 5,
+                    shape: OutlineInputBorder(),
                     child: new Text('Show Error Toast'),
                     onPressed: showErrorToast),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
+                    color: Colors.blue[100],
+                    elevation: 5,
+                    shape: OutlineInputBorder(),
                     child: new Text('Show Info Toast'),
                     onPressed: showInfoToast),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
+                    color: Colors.yellow[100],
+                    elevation: 5,
+                    shape: OutlineInputBorder(),
                     child: new Text('Show Warning Toast'),
                     onPressed: showWarningToast),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new RaisedButton(
+                    color: Colors.green[100],
+                  elevation: 5,
+                  shape: OutlineInputBorder(),
                   child: new Text('Show Success Toast'),
                   onPressed: showAlert,
                 ),
